@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "login": "standard_user",
+        "psw": "secret_sauce"
+    },
+    {
+        "id": 2,
+        "login": "locked_out_user",
+        "psw": "secret_sauce"
+    },
+    {
+        "id": 3,
+        "login": "performance_glitch_user",
+        "psw": "secret_sauce"
+    }
+]
