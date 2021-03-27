@@ -20,10 +20,10 @@ describe('End to End ', () => {
     });
 
     it.only('E2E - Selecionar 2 prdutos ao carrinho e finalizar comprar', () => {
-        //produtosPage.selecionarProduto(1) //Adicionar um item da lista
-        produtosPage.adicionarProdutos(3) 
+        produtosPage.selecionarProduto(1) //Adicionar um item da lista
+        //produtosPage.adicionarProdutos(3) 
         cy.wait(2000)
-        cy.get('.fa-layers-counter').contains('3')
+        cy.get('.fa-layers-counter').contains('1')
         
         cy.get('path').click()
         cy.get('.btn_action').click()

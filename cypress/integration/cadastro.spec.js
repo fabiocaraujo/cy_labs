@@ -19,7 +19,7 @@ describe('Funcionalidade: Cadastro', () => {
     var sobrenome = faker.name.lastName()
     var cep = faker.address.zipCode()
     
-    it('Deve validar cadastro com dados válidos', () => {
+    it.only('Deve validar cadastro com dados válidos', () => {
         cadastroPage.cadastro(nome, sobrenome, cep)
         cy.get('.subheader').should('have.text', 'Checkout: Overview')
     });
