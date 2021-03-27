@@ -25,8 +25,23 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (usuario, senha) => {
+    cy.visit('/')
     cy.get('#user-name').type(usuario)
     cy.get('#password').type(senha)
     cy.get('#login-button').click()
     cy.url().should('contains', 'inventory')
+    cy.wait(2000)
+})
+
+Cypress.Commands.add('addProdutoCarrinho', (num) => { 
+    cy.get(':nth-child(' + num + ') > .pricebar > .btn_primary').click()
+    cy.get('.fa-layers-counter').should('be.be.visible', 'true')
+    cy.get('path').click()
+    cy.get('.btn_action').click()
+})
+
+Cypress.Commands.add('resetAppState', () => {
+    cy.get('#react-burger-menu-btn').click()
+    cy.get('#reset_sidebar_link').click()
+    cy.get('#inventory_sidebar_link').click()
 })
