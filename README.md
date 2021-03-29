@@ -31,7 +31,7 @@ Saucelabs Demo: https://www.saucedemo.com/
     ✓ Deve validar mensagem de erro ao tentar cadastrar com campos vazios
 
 #### E2E - Ponta a ponta
-    ✓ E2E - Deve selecionar 4 produtos ao carrinho e finalizar compra
+    ✓ E2E - Deve adicionar 4 produtos ao carrinho, realizar cadastro e finalizar compra
 
 
 ## Clonando e executando em sua máquina

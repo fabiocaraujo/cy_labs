@@ -17,7 +17,7 @@ describe('Pedido End to End', () => {
     var sobrenome = faker.name.lastName()
     var cep = faker.address.zipCode()
 
-    it('E2E - Deve selecionar 4 produtos ao carrinho e finalizar compra', () => {
+    it('E2E - Deve adicionar 4 produtos ao carrinho, realizar cadastro e finalizar compra', () => {
         produtosPage.adicionarProdutos(4) // Adiciona 4 produtos ao carrinho
         cy.get('.fa-layers-counter').contains(4) // Valida quantidade de produtos no carrinho
         cy.get('.btn_action').click() //Avança para a página de Cadastro
