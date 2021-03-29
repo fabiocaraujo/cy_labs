@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cpf_cnpj": "^0.2.0",
     "cypress": "^6.8.0",
     "faker": "^5.5.0"
   }
