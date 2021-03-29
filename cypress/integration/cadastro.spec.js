@@ -30,7 +30,7 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.subheader').should('have.text', 'Checkout: Overview')
     });
 
-    it('Deve validar cadastro - Usando massa de dados em Fixture)', () => {
+    it('Deve validar cadastro - Usando massa de dados em Fixture', () => {
         // cadastroPage.cadastro(cadastroData[1].nome,cadastroData[1].sobrenome, cadastroData[1].cep)
         cy.fixture('cadastro').then((massaCadastro) => {
             cadastroPage.cadastro(
