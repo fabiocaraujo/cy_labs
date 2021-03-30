@@ -1,36 +1,35 @@
-# This is a basic workflow to help you get started with Actions
+# Este é workflow básico com Node e Cypress
 
 name: CI_cy_lab
 
-# Controls when the action will run. 
+# Controla quando a ação será executada
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Aciona o fluxo de trabalho em eventos de solicitação push ou pull, mas apenas para o branch principal (Master)
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Permite que você execute este fluxo de trabalho manualmente na guia "Actions"
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# workflow composto por uma ou mais tarefas que podem ser executadas sequencialmente ou em paralelo
 jobs:
-  # This workflow contains a single job called "build"
+  # Workflow com um Job simples
   build:
-    # The type of runner that the job will run on
+    # Máquina escolhida para rodar os testes
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    #  Sequência de tarefas que serão executadas como parte de um job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Verifica o repositório: $GITHUB_WORKSPACE, para que seu job pode acessá-lo
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: install node
+      # Passos para preparar o ambiente e a execução
+      - name: Instalando o node
         run: npm install 
 
-      # Runs a set of commands using the runners shell
-      - name: executando o cypress
+      - name: Executando o cypress
         run: npx cypress run
           echo rodando os testes cypress
 
