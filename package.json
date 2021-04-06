@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:dash": "npx cypress run --record --key b75045a6-30e6-4a30-bf49-c9fccaa422e3", 
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +17,12 @@
     "cpf_cnpj": "^0.2.0",
     "cypress": "^6.8.0",
     "faker": "^5.5.0"
+  },
+  "devDependencies": {
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
   }
 }

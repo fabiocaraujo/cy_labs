@@ -58,24 +58,32 @@ cd cy_labs
 npm install 
 ```
 
-#### Para executar em moodo Headlesss, via console
+#### Para executar em moodo Headlesss via console:
 ```
 npx cypress run
 ```
 
-#### Para executarVia Dashboard
+#### Para executar via Dashboard:
 ```
 npx cypress open 
 ```
 Após abrir o dasboard, clique na opção "Running integration tests" para rodar todos os testes.
 
+### Gerando relatórios:
+
+```
+npm run cy:report  
+```
+
+Deve criar um arquivo "cypress/mochawesome-report/report.html. Basta abrir o arquivo com seu navegador preferido.
+
 
 ### Bibliotecas de apoio:
--Cypress: Framework de automação - https://cypress.io/
+-Cypress: Framework de automação: https://cypress.io/
 
--Faker: Biblioteca para geração de massa de dados - https://www.npmjs.com/package/faker
+-Faker: Biblioteca para geração de massa de dados: https://www.npmjs.com/package/faker
 
-
+-Mochawesome Report, para geração de relatórios: https://www.npmjs.com/package/mochawesome 
 
 ### Boa diversão ;) 
 Qualquer crítica ou sugestão é bem vinda! 

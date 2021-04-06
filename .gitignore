@@ -18,6 +18,11 @@ node_modules/
 
 .cache/
 
-screenshots/
-
+# Reports 
 videos/
+
+reports/
+
+mochawesome-report/
+
+screenshots/
