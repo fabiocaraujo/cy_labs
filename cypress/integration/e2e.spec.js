@@ -1,9 +1,7 @@
 /// <reference types="cypress" />
-import cadastroPage from "../support/pages/cadastro.page"
-import produtosPage from "../support/pages/produtos.page"
 var faker = require('faker');
 
-describe('Pedido End to End', () => {
+describe('Pedido E2E - Validando todo o fluxo de Pedido - Usando Custom Commands e Massa de dados dinâmica', () => {
 
     before(() => {
         cy.visit("/")
@@ -13,16 +11,18 @@ describe('Pedido End to End', () => {
     });
 
     //Gera dados fakes para os testes
-    var nome = faker.name.firstName()
-    var sobrenome = faker.name.lastName()
-    var cep = faker.address.zipCode()
+    var nomeFake = faker.name.firstName()
+    var sobrenomeFake = faker.name.lastName()
+    var cepFake = faker.address.zipCode()
 
-    it('E2E - Deve adicionar 4 produtos ao carrinho, realizar cadastro e finalizar compra', () => {
-        produtosPage.adicionarProdutos(4) // Adiciona 4 produtos ao carrinho
-        cy.get('.fa-layers-counter').contains(4) // Valida quantidade de produtos no carrinho
-        cy.get('.btn_action').click() //Avança para a página de Cadastro
-        cadastroPage.cadastro(nome, sobrenome, cep) //Realiza o cadastro com dados Fakes
-        cy.get('.btn_action').click() //Avança para o resumo do pedido
-        cy.get('.complete-header').should('have.text', 'THANK YOU FOR YOUR ORDER') 
+    it('E2E - Deve adicionar 4 produtos ao carrinho, realizar o cadastro e finalizar compra', () => {
+        cy.adicionarProdutos(4)
+        cy.get('.shopping_cart_badge').contains(4)
+        cy.get('.cart_item').should('not.be.empty')
+        cy.get('.btn_action').click()
+        cy.cadastro(nomeFake, sobrenomeFake, cepFake) 
+        cy.get('.btn_action').click() 
+        cy.get('.complete-header').should('have.text', 'THANK YOU FOR YOUR ORDER')
+        cy.url().should('include', 'checkout-complete')
     });
 });

@@ -5,33 +5,34 @@ Saucelabs Demo: https://www.saucedemo.com/
 
 ### Cenários de Testes automatizados
 
-#### Produtos: 
-    ✓ Deve validar página de produto de um item da lista
+#### E2E - Teste de Ponta a ponta
+Descrição: Pedido E2E - Validando todo o fluxo de Pedido - Usando Custom Commands e massa de dados dinâmica
+    ✓ E2E - Deve adicionar 4 produtos ao carrinho, realizar o cadastro e finalizar compra
 
-    ✓ Deve validar botão "Adicionar no Carrinho" na página de produto
-
-    ✓ Deve validar nome selecionado na pagina de produto
-
-#### Checkout 
-    ✓ Deve adicionar produto no carrinho
-
-    ✓ Deve acrescentar mais um produto no carrinho
-    
-    ✓ Deve remover produto do carrinho
-    
-    ✓ Deve validar botão Continuar comprando
-
-#### Funcionalidade: Cadastro 
-    ✓ Deve validar cadastro com dados válidos - usando Faker
-    
-    ✓ Deve validar cadastro com dados válidos - usando Massa de dado Fixos
-    
+#### Funcionalidade: Cadastro
+Descrição: Cadastro - Usando Pages Objects e Massa de dados dinâmica e fixa
+    ✓ Deve validar cadastro com dados válidos - usando Massa de dadoa Fixas 
+    ✓ Deve validar cadastro com dados válidos - Usando dados Faker
     ✓ Deve validar cadastro - Usando massa de dados em Fixture
-    
     ✓ Deve validar mensagem de erro ao tentar cadastrar com campos vazios
 
-#### E2E - Ponta a ponta
-    ✓ E2E - Deve adicionar 4 produtos ao carrinho, realizar cadastro e finalizar compra
+#### Funcionalidade: Checkout
+Descrição: Checkout usando Custom Commands, JQuery e Método convertendo Texto em Valor
+    ✓ Deve validar o total de 2 produtos na tela de resumo 
+
+#### Funcionalidade: Carrinho
+Descrição: Carrinho - Usando Pages Objects
+    ✓ Deve adicionar produto no carrinho
+    ✓ Deve acrescentar mais um produto no carrinho
+    ✓ Deve remover produto do carrinho
+    ✓ Deve validar botão Continuar comprando
+    ✓ Deve validar mensagem de erro ao avançar sem produtos no carrinho
+
+#### Funcionalidade: Página de produtos
+Funcionalidade: Página de produtos - usando Pages Objects
+    ✓ Deve validar página de produto de um item da lista
+    ✓ Deve validar botão "Adicionar no Carrinho" na página de produto
+    ✓ Deve validar nome selecionado na pagina de produto
 
 
 ## Clonando e executando em sua máquina

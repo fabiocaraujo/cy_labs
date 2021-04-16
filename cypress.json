@@ -1,5 +1,6 @@
 {
     "baseUrl": "https://www.saucedemo.com/",
+    "chromeWebSecurity": false,
     "reporter": "mochawesome",
     "reporterOptions": {
         "reportDir": "mochawesome-report",

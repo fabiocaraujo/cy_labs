@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import produtosPage from "../support/pages/produtos.page"
 
-describe('Funcionalidade: Página de produtos', () => {
+describe('Funcionalidade: Página de produtos - usando Pages Objects', () => {
 
     beforeEach(() => {
         cy.fixture('login').then((user) => {
@@ -22,7 +22,7 @@ describe('Funcionalidade: Página de produtos', () => {
     it('Deve validar botão "Adicionar no Carrinho" na página de produto', () => {
         produtosPage.adicionaProdutoPorNome('Sauce Labs Backpack')
         cy.get('.btn_primary').click()
-        cy.get('.fa-layers-counter').contains(1)
+        cy.get('.shopping_cart_badge').should('contain', 1)
     });
 
     it('Deve validar nome selecionado na pagina de produto', () => {
